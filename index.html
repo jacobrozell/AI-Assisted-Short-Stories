@@ -250,6 +250,29 @@
     letter-spacing: 0.08em;
   }
 
+  .site-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    margin: -1rem 0 2.25rem;
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .site-nav a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.12rem;
+    opacity: 0.88;
+  }
+
+  .site-nav a:hover { border-bottom-color: var(--red); opacity: 1; }
+
+  .site-nav .nav-current { color: var(--fade); }
+
   @media (max-width: 620px) {
     .page { padding: 3.5rem 2rem 5rem; }
     h1 { font-size: 2.2rem; }
@@ -259,6 +282,11 @@
 </head>
 <body>
 <article class="page">
+
+  <nav class="site-nav" aria-label="Site">
+    <span class="nav-current" aria-current="page">Story</span>
+    <a href="outline.html">Outline</a>
+  </nav>
 
   <header class="story-header">
     <span class="kicker">Flash Fiction &nbsp;·&nbsp; Final Draft</span>

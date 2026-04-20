@@ -22,7 +22,7 @@ So the pipeline is roughly: **world → scrubbed outline → draft → proof →
 
 Behind the prose sits a **post-execution outline (rev 6)** aligned to the finished draft: act-by-act beats, notes on what changed between plan and execution (“execution deviations”), character architecture, ambient-monitor arc, and a **literary DNA** section (e.g. Vonnegut’s sardonic distance, PKD’s administered reality, Zelazny’s mythic self, Bradbury’s elegiac warmth). That document is a **companion artifact** to the story, not required to read the piece online.
 
-If you add the styled outline to this repo as something like `outline.html`, you can link it from here as a second page on the same site.
+The companion **post-execution outline (rev 6)** is published as [`outline.html`](https://jacobrozell.github.io/sovereigns-silence-/outline.html) (same site; linked from the story page).
 
 ## Local preview
 
