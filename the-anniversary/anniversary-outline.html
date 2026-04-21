@@ -38,13 +38,44 @@
     width: 100%;
     max-width: 860px;
     display: flex;
-    justify-content: flex-end;
-    gap: 1.25rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
     margin-bottom: 0.75rem;
     font-family: var(--mono);
     font-size: 0.55rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+  }
+
+  .nav-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .nav-story-id {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+    color: #8a7d6a;
+    line-height: 1.35;
+  }
+
+  .nav-doc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.15rem;
+    align-items: center;
+  }
+
+  .nav-more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.15rem;
+    align-items: center;
   }
 
   .site-nav a {
@@ -331,6 +362,7 @@
   strong { font-weight: 600; }
 
   @media (max-width: 640px) {
+    .site-nav { flex-direction: column; align-items: flex-start; }
     .document { padding: 3rem 2rem; }
     h1 { font-size: 2rem; }
   }
@@ -339,10 +371,17 @@
 <body>
 
 <nav class="site-nav" aria-label="Site">
-  <a href="the-anniversary.html">Story</a>
-  <span class="nav-current" aria-current="page">Outline</span>
-  <a href="../sovereigns-silence/index.html">Sovereign</a>
-  <a href="../index.html">All stories</a>
+  <div class="nav-primary">
+    <span class="nav-story-id">The Anniversary</span>
+    <div class="nav-doc">
+      <a href="the-anniversary.html">Story</a>
+      <span class="nav-current" aria-current="page">Outline</span>
+    </div>
+  </div>
+  <div class="nav-more">
+    <a href="../sovereigns-silence/index.html">Sovereign</a>
+    <a href="../index.html">All stories</a>
+  </div>
 </nav>
 
 <div class="document">
