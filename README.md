@@ -1,40 +1,38 @@
-# The Sovereign’s Silence
+# AI-Assisted Short Stories
 
-A short science fiction story published as a single static page for [GitHub Pages](https://jacobrozell.github.io/sovereigns-silence-/).
+A single repository for static HTML short fiction, with **one directory per story**.
 
-## What this is
+Published for [GitHub Pages](https://jacobrozell.github.io/AI-Assisted-Short-Stories/) (project site root: `index.html` lists every piece).
 
-This repo started as an experiment: take **real-world events**, feed them to an AI, and see how it **reinterprets** the material as story DNA. That exercise turned into a full short story aimed at the register of several favorite SF voices—**Philip K. Dick**, **Ray Bradbury**, **Roger Zelazny**, **Isaac Asimov**, and related shades of parable, myth, and cold bureaucratic irony.
+## Stories
 
-The finished piece is **`index.html`** (required name for the site root). A duplicate copy also lives in the repo under the original long filename.
+| Story | Folder | Main HTML |
+| --- | --- | --- |
+| The Sovereign's Silence | [`sovereigns-silence/`](sovereigns-silence/) | [`sovereigns-silence/index.html`](sovereigns-silence/index.html) |
+| The Anniversary | [`the-anniversary/`](the-anniversary/) | [`the-anniversary/the-anniversary.html`](the-anniversary/the-anniversary.html) |
 
-## How it was made
+Companion outlines and alternate drafts live beside each story in the same folder.
 
-1. **Outline from the world** — Recent events went into **Gemini** to generate a **science fiction outline** inspired by what was happening in the world.
-2. **Scrub** — All identifiable real-world data was **removed from the outline** so the fiction could stand on its own.
-3. **Draft** — **Claude** wrote the story from the cleaned outline.
-4. **Pass** — **Gemini** was used for **proofreading** and tightening.
-5. **Iterate** — Over several days, **plot and structure choices** were revised by hand until the draft settled where it is now.
+## How these were made
 
-So the pipeline is roughly: **world → scrubbed outline → draft → proof → human iteration**.
+1. **Outline from the world** — Recent events fed into an LLM for a genre outline.
+2. **Scrub** — Identifiable real-world detail removed so the fiction stands alone.
+3. **Draft** — Story drafted from the cleaned outline.
+4. **Pass** — Proofing and tightening in another model or pass.
+5. **Iterate** — Plot and structure revised by hand until the draft settles.
 
-## Outline (working document)
-
-Behind the prose sits a **post-execution outline (rev 6)** aligned to the finished draft: act-by-act beats, notes on what changed between plan and execution (“execution deviations”), character architecture, ambient-monitor arc, and a **literary DNA** section (e.g. Vonnegut’s sardonic distance, PKD’s administered reality, Zelazny’s mythic self, Bradbury’s elegiac warmth). That document is a **companion artifact** to the story, not required to read the piece online.
-
-The companion **post-execution outline (rev 6)** is published as [`outline.html`](https://jacobrozell.github.io/sovereigns-silence-/outline.html) (same site; linked from the story page).
+Pipeline in short: **world → scrubbed outline → draft → proof → human iteration**.
 
 ## Local preview
 
-Open `index.html` in a browser, or from this folder:
+From this folder:
 
 ```bash
-# example: Python built-in server
 python -m http.server 8080
 ```
 
-Then visit `http://localhost:8080/`.
+Open `http://localhost:8080/`.
 
 ## License / use
 
-Unless you add a `LICENSE` file, default GitHub terms apply to the repo metadata only; clarify how you want the **story text** reused if you care about that.
+Unless you add a `LICENSE` file, default GitHub terms apply to repo metadata only; clarify reuse of **story text** if that matters.

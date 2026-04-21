@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Anniversary — Outline (refined)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0e0c0a;
+    --paper: #f2ede6;
+    --paper-dark: #e5ddd1;
+    --red: #8b1a1a;
+    --red-dim: #c0392b18;
+    --gold: #b8963e;
+    --mirror: #2e2a28;
+    --mirror-bg: #eeebe7;
+    --resonance: #3a2a1a;
+    --resonance-bg: #f5ede0;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'EB Garamond', Georgia, serif;
+    --display: 'Playfair Display', 'Times New Roman', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1612;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.25rem 1rem 3rem;
+    font-family: var(--serif);
+  }
+
+  .site-nav {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .site-nav a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.12rem;
+  }
+
+  .site-nav a:hover { border-bottom-color: var(--gold); }
+  .site-nav .nav-current { color: #a8977e; }
+
+  .document {
+    background: var(--paper);
+    max-width: 860px;
+    width: 100%;
+    padding: 5rem 5.5rem;
+    position: relative;
+    box-shadow:
+      0 0 0 1px #c8bfb0,
+      0 4px 8px rgba(0,0,0,0.4),
+      0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  .document::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 28px,
+      rgba(160,140,110,0.07) 28px, rgba(160,140,110,0.07) 29px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .document > * { position: relative; z-index: 1; }
+
+  .doc-header {
+    text-align: center;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .classification {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: var(--red);
+    border: 1.5px solid var(--red);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    margin-bottom: 2rem;
+    transform: rotate(-0.5deg);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #6b5e4e;
+    margin-bottom: 1.5rem;
+  }
+
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: #9a8878;
+    text-transform: uppercase;
+  }
+
+  .spine {
+    background: var(--ink);
+    color: #c8bfb0;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .spine strong { color: var(--paper); font-weight: 500; }
+
+  .spine-title {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .char-block {
+    background: var(--paper-dark);
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .char-entry { margin-bottom: 2rem; }
+  .char-entry:last-child { margin-bottom: 0; }
+
+  .char-name {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .char-role {
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .char-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #3a2e20;
+  }
+
+  .resonance-arc {
+    background: var(--resonance-bg);
+    border-left: 3px solid var(--resonance);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--resonance);
+    line-height: 2;
+  }
+
+  .act { margin-bottom: 3.5rem; }
+
+  .act-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #c8bfb0;
+    padding-bottom: 0.75rem;
+  }
+
+  .act-num {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .act-title {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .act-body { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .beat { display: flex; gap: 1rem; align-items: flex-start; }
+  .bm { color: var(--gold); font-family: var(--mono); font-size: 0.75rem; margin-top: 0.35rem; flex-shrink: 0; }
+  .bt { font-size: 0.98rem; line-height: 1.75; color: #2a2218; }
+
+  .beat-r {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fdf6ee;
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1rem 0.75rem 0;
+  }
+
+  .bm-r { color: var(--red); font-family: var(--mono); font-size: 0.75rem; margin-top: 0.35rem; flex-shrink: 0; }
+
+  .prose {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.96rem;
+    line-height: 1.8;
+    border-left: 3px solid var(--gold);
+    padding: 0.9rem 1.3rem;
+    background: var(--paper-dark);
+    color: #2a2218;
+    margin: 0.3rem 0;
+  }
+
+  .prose::before {
+    content: attr(data-label);
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 0.48rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .resonance-line {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    padding: 0.65rem 1rem;
+    margin: 0.3rem 0;
+    line-height: 1.6;
+    background: var(--resonance-bg);
+    border-left: 3px solid var(--resonance);
+    color: var(--resonance);
+  }
+  .resonance-line::before { content: 'RESONANCE // '; opacity: 0.55; font-size: 0.62rem; letter-spacing: 0.1em; }
+
+  .mirror-line {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    padding: 0.65rem 1rem;
+    margin: 0.3rem 0;
+    line-height: 1.6;
+    background: var(--mirror-bg);
+    border-left: 3px solid var(--mirror);
+    color: var(--mirror);
+  }
+  .mirror-line::before { content: 'MIRROR // '; opacity: 0.55; font-size: 0.68rem; letter-spacing: 0.1em; }
+
+  .callout {
+    background: var(--red-dim);
+    border: 1px solid #c08070;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #4a1010;
+  }
+
+  .callout::before {
+    content: 'EXECUTION';
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--red);
+  }
+
+  .doc-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-meta { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.2em; color: #9a8878; }
+  .stamp { font-family: var(--display); font-size: 1.1rem; font-weight: 900; color: var(--red); border: 3px solid var(--red); padding: 0.3rem 0.8rem; transform: rotate(4deg); opacity: 0.6; letter-spacing: 0.05em; }
+
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+
+  @media (max-width: 640px) {
+    .document { padding: 3rem 2rem; }
+    h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <a href="the-anniversary.html">Story</a>
+  <span class="nav-current" aria-current="page">Outline</span>
+  <a href="../sovereigns-silence/index.html">Sovereign</a>
+  <a href="../index.html">All stories</a>
+</nav>
+
+<div class="document">
+
+  <div class="doc-header">
+    <div class="classification">Narrative Architect — Working Document</div>
+    <h1>The Anniversary</h1>
+    <div class="subtitle">Psychological horror / quiet sci-fi</div>
+    <div class="doc-meta">Refined outline — spine only, no revision ledger</div>
+  </div>
+
+  <div class="spine">
+    <span class="spine-title">STORY SPINE</span>
+    <strong>Small failures, no outside blame:</strong> dead phone, then radio dies while the outlet still runs — logic exhausted, dread has nowhere legitimate to go.<br><br>
+    <strong>Resonance</strong> (never explained): standing ripple in still water; shadow lags Jim; reflection can blink late. Jim treats them like bad wiring. Act III: either they stop or they stop mattering — do not resolve which.<br><br>
+    <strong>Agency:</strong> he leaves the hallway twice, returns, then goes to the spare room with supplies. Not pulled; he keeps choosing the ritual. Theme: <em>choosing</em> the inheritance, not merely carrying it.<br><br>
+    <strong>Mirror:</strong> uncle is literal — ordinary domestic pour and clean, same economy as Jim with water. No eye contact; story does not say if he knows Jim is there.<br><br>
+    <strong>Voice:</strong> fly-on-the-wall — behavior and hands, not labeled feelings. Bradbury-weight rooms; exhaustion flatter than the horror.
+  </div>
+
+  <div class="char-block">
+    <span class="section-label">CHARACTER</span>
+
+    <div class="char-entry">
+      <span class="char-role">Protagonist</span>
+      <div class="char-name">Jim — The Ritualist</div>
+      <div class="char-desc">Fifty-three on April 20th — same age his uncle was at death; aware of it for thirty years, never spoken. Lives alone; aggressive order; radio and music as load-bearing geometry, not comfort. Not in denial about death — in denial about the <em>shape</em> of what he inherited (coping as learned performance). Does not drink; thinks that proves mastery.</div>
+    </div>
+
+    <div class="char-entry">
+      <span class="char-role">Inheritance</span>
+      <div class="char-name">Uncle Tom</div>
+      <div class="char-desc">Died fifty-three, alcohol. Same domestic discipline, music against silence, left the mirror. In the glass: his old apartment, undershirt, pour, clean — absorbed, ordinary. Does not need to be supernatural to land.</div>
+    </div>
+
+    <div class="char-entry">
+      <span class="char-role">Anchor</span>
+      <div class="char-name">The mirror</div>
+      <div class="char-desc">Not “haunted” — a scheduled relationship with truth. Velvet shroud 364 days. Chair facing the mirror this year only: recorded, never explained, never ruminated.</div>
+    </div>
+  </div>
+
+  <div class="resonance-arc">
+    <span class="section-label">RESONANCE ESCALATION</span>
+    ACT I → Standing ripple in water glass. No source. Jim watches, drinks, moves on.<br/>
+    ACT II → Shadow on kitchen wall lags ~0.5s; ripple persists / strengthens. He cannot unsee it.<br/>
+    ACT III → [No log line. Jim has stopped treating the apartment as a problem set.]
+  </div>
+
+  <!-- ACT I -->
+  <div class="act">
+    <div class="act-header">
+      <span class="act-num">Act I</span>
+      <span class="act-title">The Ritual — The Shield</span>
+    </div>
+    <div class="act-body">
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">5:47 AM, no alarm. Phone dead on the nightstand. Onto charger without waiting — motion, not pause.</div>
+      </div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Kitchen radio on: jazz, then news until no acoustic corner is empty. Music as infrastructure.</div>
+      </div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">April 20th; Jim is fifty-three. Annual mirror cleaning in the spare room is non-negotiable, but only after the rest of the apartment is in order — a rule he made and never inspected.</div>
+      </div>
+
+      <div class="resonance-line">Kitchen glass: standing surface ripple. No vibration. Ongoing. ~4s observation; he drinks and goes to the sink.</div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Dishes → vacuum → counters → dishes. Not completion — the next task. Music is the only straight line in the room.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACT II -->
+  <div class="act">
+    <div class="act-header">
+      <span class="act-num">Act II</span>
+      <span class="act-title">The Silence — The Isolation</span>
+    </div>
+    <div class="act-body">
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Radio stops between songs. Damp cloth, counter, wait — no resume.</div>
+      </div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">Plug checked with two fingers; kitchen light toggled — power confirmed, radio still dead. Rationalism is real, not posture. He sets down the cloth.</div>
+      </div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Phone at 3%; powered off to save. No music, no news, no contact — assembled from small failures, not a single event.</div>
+      </div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">Silence is wrong: directional, expectant — not the familiar 3 AM quiet he has calibrated to.</div>
+      </div>
+
+      <div class="resonance-line">Kitchen wall shadow: ~0.5s lag behind Jim. Glass ripple continues, amplitude up. He looks ~2s, returns to counter. Does not move toward spare room.</div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">~45 minutes failing to fix the radio: same plug rechecked, speaker housing, nudged six inches — delay tactics exhausted.</div>
+      </div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">Hallway mouth: finds himself there without having decided; back to kitchen, stovetop finished; hallway again. Spare room door closed as always. Supplies from under sink. Opens door with deliberate calm — demonstrating to no one he is not afraid. Enters.</div>
+      </div>
+
+      <div class="prose" data-label="PROSE — BRIDGE">The radio died with a soft, electronic thrum between songs.
+
+Jim stood at the kitchen counter with a damp cloth in one hand and nothing to show for it. He waited. The radio did not resume. He checked the plug with two fingers, found it seated, checked the outlet by turning the kitchen light on and off. The light worked. The radio did not.
+
+He set down the cloth.
+
+The apartment was not quiet the way it was quiet at three in the morning — a comfortable, familiar quiet he had calibrated himself to over years. This was different. This was the quiet of a room after someone leaves it.
+
+His ears rang faintly.
+
+He caught himself standing at the entrance to the hallway. He had not decided to go to the hallway. He returned to the kitchen and finished the stovetop. Then he was in the hallway again.
+
+He stood there for a moment. The spare room door was closed, which was how it always was.
+
+He went and got his cloth and his glass cleaner from under the sink. He walked to the spare room door with the deliberate, slightly performative calm of a man demonstrating to no one that he is not afraid.
+
+He opened the door. He went in.</div>
+
+    </div>
+  </div>
+
+  <!-- ACT III -->
+  <div class="act">
+    <div class="act-header">
+      <span class="act-num">Act III</span>
+      <span class="act-title">The Confrontation — The Loop</span>
+    </div>
+    <div class="act-body">
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Spare room: mirror under velvet; wooden chair facing it — not there last year. Jim does not think about the chair. Narration does not explain it.</div>
+      </div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">Shroud off; clean top-left inward. One buzz from kitchen — checks phone; on return, top-left dirty again as if untouched. Second pass, still no commentary out loud.</div>
+      </div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">Third pass, looks up: uncle in the glass — not distortion — the old apartment, undershirt, two fingers of whiskey, thousandth pour. Not looking at Jim. Same economy as Jim filling water.</div>
+      </div>
+
+      <div class="mirror-line">Bottle down; collar; table; cloth; cleaning the surface in front of him — parallel ritual.</div>
+
+      <div class="beat">
+        <span class="bm">◆</span>
+        <div class="bt">No scream, no run. Stands a long time, then finishes the glass. Fifty-three; job to do. Shroud on. Kitchen, dishes. Counter glass still.</div>
+      </div>
+
+      <div class="resonance-line">Ripple: resolved. Shadow lag: none observed. Jim does not verify — washing dishes.</div>
+
+      <div class="beat-r">
+        <span class="bm-r">◆</span>
+        <div class="bt">Kitchen table: water, newspaper, radio still dead, quiet. Same paragraph four times; hand flat beside the glass. End on stillness — no flash, no reset cue; the loop never stopped, only looked like motion before.</div>
+      </div>
+
+      <div class="prose" data-label="FINAL IMAGE">Jim sat down at the kitchen table with a glass of water and the newspaper. The radio was still broken. The apartment was very quiet. He read the same paragraph four times. His hand rested on the table, flat and motionless, next to the glass.
+
+Outside, the city was doing whatever it did. He didn't check.</div>
+
+    </div>
+  </div>
+
+  <div class="callout"><strong>Music = order; silence = what the room is saying.</strong> No interior “he felt”; write hands and sequence. Resonance: mundane, never theorized. Uncle beat carries theme — avoid a second meta-callout after it.</div>
+
+  <div class="doc-footer">
+    <div class="footer-meta">The Anniversary — outline only</div>
+    <div class="stamp">REFINED</div>
+  </div>
+
+</div>
+</body>
+</html>

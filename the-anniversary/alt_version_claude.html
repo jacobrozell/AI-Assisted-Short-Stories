@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Anniversary</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0e0c0a;
+    --paper: #f5f0e8;
+    --paper-mid: #ede6d8;
+    --fade: #6b5e4e;
+    --gold: #b8963e;
+    --red: #8b1a1a;
+    --serif: 'EB Garamond', Georgia, serif;
+    --display: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1612;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1rem 6rem;
+    font-family: var(--serif);
+  }
+
+  .site-nav {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .site-nav a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.12rem;
+  }
+
+  .site-nav a:hover { border-bottom-color: var(--gold); }
+  .site-nav .nav-current { color: #a8977e; }
+
+  .page {
+    background: var(--paper);
+    max-width: 700px;
+    width: 100%;
+    padding: 5rem 5.5rem 5.5rem;
+    position: relative;
+    box-shadow:
+      0 0 0 1px #c0b49a,
+      0 2px 6px rgba(0,0,0,0.25),
+      0 12px 32px rgba(0,0,0,0.4),
+      0 40px 100px rgba(0,0,0,0.55);
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      180deg,
+      transparent,
+      transparent 31px,
+      rgba(155,135,105,0.065) 31px,
+      rgba(155,135,105,0.065) 32px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page > * { position: relative; z-index: 1; }
+
+  .story-header {
+    text-align: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #c0b49a;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.28em;
+    color: var(--red);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.75rem;
+    opacity: 0.85;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: 2.85rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 0.5rem;
+  }
+
+  .deck {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.02rem;
+    color: var(--fade);
+    margin-top: 1.1rem;
+  }
+
+  .draft-tag {
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    color: #9a8878;
+    margin-top: 1.25rem;
+    display: block;
+  }
+
+  .story-body {
+    font-size: 1.1rem;
+    line-height: 1.88;
+    color: #1c1710;
+  }
+
+  .story-body p { margin-bottom: 1.5rem; }
+  .story-body em { font-style: italic; }
+
+  .break {
+    text-align: center;
+    margin: 2.75rem 0;
+    color: var(--gold);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 3rem 2rem 4rem; }
+    h1 { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-current" aria-current="page">Story</span>
+  <a href="anniversary-outline.html">Outline</a>
+  <a href="../sovereigns-silence/index.html">Sovereign</a>
+  <a href="../index.html">All stories</a>
+</nav>
+
+<div class="page">
+  <header class="story-header">
+    <span class="kicker">Short fiction</span>
+    <h1>The Anniversary</h1>
+    <p class="deck">Draft 2</p>
+    <span class="draft-tag">APRIL 20 · FROM OUTLINE</span>
+  </header>
+
+  <article class="story-body">
+
+    <p>Jim woke at 5:47 without the alarm. The bedroom was still the color of unlit wool. His hand went to the phone before the lamp. The screen stayed black. He pressed the power button twice, watched for the logo, and when it didn't come he set the phone on the charger with the flat motion of a man slotting a tool back into its place and swung his feet to the floor and stood.</p>
+
+    <p>He was fifty-three years old. He had known since he was twenty-three—since the funeral, since his uncle's kitchen with its yellow paint and the smell of old dish soap and the refrigerator hum filling the silence where a person used to be—that fifty-three was the number his uncle had stopped at. He had never said this aloud to anyone. There was nothing to say that would not sound like superstition, and Jim did not keep superstition. He kept order. Order had gotten him through a marriage and most of a divorce and a daughter in Portland who called on holidays and meant it, and thirty years at the city assessor's office where his reputation was that he never lost a file and never raised his voice. Order was sufficient. He believed this the way he believed in the flat weight of a properly balanced ledger: not passionately, but completely.</p>
+
+    <p>He made coffee by the window. The city outside was still deciding what kind of day it would be. A truck idled at the light below, then moved. He watched it go and thought about his uncle the way he sometimes did in the early morning when there was no one to catch him at it—not with grief exactly, grief had a shape and a duration and his did not, more like running a thumb over a seam in wood that has been planed smooth but is still there if you press.</p>
+
+    <p>His uncle had been the kind of man who cleaned things. Not for company, not for any occasion. Just cleaned. Jim had visited as a boy, every summer for ten years, and his uncle was always doing something—wiping down a counter, polishing a glass, pressing a rag along a baseboard with the patient focus of a man solving a problem that had been there before him and would be there after. He never made it feel like labor. He made it feel like a conversation with the apartment, back and forth, attentive. Jim had learned, watching, that a clean surface was a kind of argument against disorder. The argument had to be made every day or it was lost.</p>
+
+    <p>In the kitchen he turned the radio on by hand. Jazz first, then a news voice layered under it, then weather, then traffic, until the room had no corner that did not carry some human sound. He filled a glass at the sink and set it on the counter while he opened a cabinet for coffee.</p>
+
+    <p>The water in the glass was not still. A ring stood on the surface, tight and bright, as if someone had tapped the rim and not stopped tapping. He watched it for four seconds, maybe five. The counter did not vibrate under his palms. The refrigerator did not cycle. He lifted the glass, drank, rinsed it, filled it again. The new water did the same thing. He looked at it a moment. He drank that too.</p>
+
+    <p>On the little calendar by the phone charger someone—he—had circled a date last month in red. Today. April twentieth. He picked up the pen from beside the calendar and held it. Set it back down.</p>
+
+    <p>Once a year, when the apartment met his standard, he went into the spare room, lifted the velvet shroud from the mirror his uncle had left him, cleaned the glass, and put the shroud back. Not before. Never before. The rule had no origin he could name. It was simply the rule, the one piece of ceremony he had allowed himself in a life that was otherwise practical in all its arrangements. His daughter had asked about the mirror once, visiting for Thanksgiving, and he had said it was a family piece. She had accepted this. She had her mother's gift for knowing when a door was not meant to open.</p>
+
+    <p>He started the dishes and abandoned them for the vacuum. He abandoned the vacuum for the counters. The counters led him back to the dishes. The morning had a rhythm and he was inside it and as long as he was inside it there was no reason to go down the hall. The music held the morning in a straight line.</p>
+
+    <p>When the straight line broke, it did not break loudly.</p>
+
+    <div class="break">* * *</div>
+
+    <p>The radio died between songs with a soft electronic thrum, the kind of sound a small appliance makes when something inside it gives up without drama. Jim stood at the counter with a damp cloth in one hand and nothing to show for it. He waited. The radio did not resume. He checked the plug with two fingers, found it seated, and turned the kitchen light on and off. The light obeyed. The radio stayed dead.</p>
+
+    <p>He set down the cloth.</p>
+
+    <p>The apartment was not quiet the way it was quiet at three in the morning, when quiet meant the building had gone to sleep and he could trust the geometry of the walls. This was different. Sound had been pulled out at an angle he could not measure. His ears filled with their own thin ring, the kind you only noticed when everything else stopped.</p>
+
+    <p>His phone, when he checked it, offered three percent and a warning. He powered it down to save what was left. Now there was no music, no news, no voice that was not his own if he chose to speak. He did not choose to speak.</p>
+
+    <p>He moved to the sink and washed a plate he had already washed. His shadow rode the kitchen wall beside him in the early light. When he lifted his hand, the shadow lifted its hand a half-beat late, as if the wall were remembering him instead of copying. He stood still. The shadow caught up and then overshot by a hair and settled. He looked at the glass on the counter. The standing ripple was still there, a little worse than before, a little brighter at the edge, like foil catching sun that was not in the room. He did not pick up the glass.</p>
+
+    <p>He thought about calling his daughter. Then he thought about what he would say when she asked how he was doing. Fine, he would say, and she would say that was good, and neither of them would be wrong, exactly. He left the phone on the charger.</p>
+
+    <p>For forty-five minutes he tried to fix the radio. He checked the plug again. He blew along the seam of the speaker housing. He tapped the tuner as if coaxing blood back into a finger. He slid it six inches left, then six inches right, as if the counter were a coordinate plane and he had simply been solving for the wrong x. None of this was rational. He did it anyway, because each motion postponed the next motion, and the next motion had a door at the end of it.</p>
+
+    <p>He thought about his uncle's apartment. The radio there had been a thick gray thing on the windowsill, the kind with a telescoping antenna his uncle never bothered to extend because the jazz station came in clean enough without it. It had played all day, winter and summer, the same station, the same loose weave of trumpet and piano filling the yellow kitchen while his uncle moved around the periphery of whatever music was playing, neither ignoring it nor attending to it, just present with it the way you were present with weather. Jim had sat at the table with his orange juice and watched, eight years old, nine, ten, and tried to understand what his uncle was listening for. He never figured it out. He thought now, standing in his own kitchen in the wrong quiet, that maybe his uncle had not been listening for anything. Maybe the music had just been proof that he was there.</p>
+
+    <p>When the forty-five minutes were gone, Jim stood at the mouth of the hallway without remembering the decision to walk there.</p>
+
+    <p>He went back and finished the stovetop with the cloth. The metal took a dull shine. The silence sat on top of it and did not move.</p>
+
+    <p>Then he was in the hallway again.</p>
+
+    <p>The spare room door was closed, which was how it always was. He retrieved the glass cleaner and a fresh cloth from under the sink, took both down the hall, and stood with his hand on the knob. He was not afraid. He was certain of this the way he was certain of most things, which was to say he had checked it twice and found nothing there and had decided to proceed on that basis. He opened the door.</p>
+
+    <div class="break">* * *</div>
+
+    <p>The spare room was clean the way a drawer was clean: nothing in it but function. A window faced north. The light that came through it was the color of old pewter. The mirror stood against the far wall under its shroud, a vertical lump of dark red velvet that reached almost to the ceiling—a tall glass, taller than him, with a carved mahogany frame his uncle had hauled up four flights of stairs in 1974 and that Jim had hauled down similar stairs thirty years later and had not been able to explain to the movers, who wanted a reason.</p>
+
+    <p>A wooden chair faced the mirror.</p>
+
+    <p>Jim looked at the chair. It was a straight-backed kitchen chair, painted white once, the paint worn to bare wood on the front rung where feet had rested. He did not remember a chair there last year. He stood for a moment trying to remember if he had put it there himself, some other day, for some errand he had since forgotten. He could not. He did not look at the chair a second time. His eyes went to the shroud, to the work.</p>
+
+    <p>He drew the velvet off in one pull and folded it over his arm.</p>
+
+    <p>The glass showed him the room behind him: the window, the chair, himself. The north light laid everything out in its spare pewter manner, no flattery, no shadows to hide in. He looked older in this glass than in the bathroom mirror. He could not have said why. He blinked. His reflection blinked—almost on time, a half-count behind, which he attributed to the angle of the light or the slight warp in old glass and did not examine further.</p>
+
+    <p>He set the folded velvet on the chair and sprayed cleaner into the rag and began at the top left corner the way he always did, working inward in patient stripes. The chemical smell cut through the dust smell. His shoulders settled into the familiar motion, a motion that had come from somewhere and that he recognized, every year, as not entirely his own. He was cleaning the way his uncle cleaned. The same pressure, the same patience with a streak, the same habit of starting in a corner and working toward the center as though neatness were a convergence problem.</p>
+
+    <p>From the kitchen came a buzz—once, brief, then silence. A notification. He set the rag on the seat of the chair and walked out to the phone, still dark on the charger. He turned it on long enough for the screen to show a battery warning and a calendar reminder he had set himself: <em>Mirror. Today.</em> Two words. He had not trusted himself to forget and so he had written it down, and reading it now he felt the mild absurdity of having needed to, as if in some version of this day he might have woken up and simply not known what day it was and what came with it. He powered the phone off again and returned to the spare room.</p>
+
+    <p>The top left corner of the mirror was dirty.</p>
+
+    <p>Not smudged. Not streaked from a careless rag. Dirty the way glass got when no one had touched it for months—fine grain caught in the bevel, a faint bloom at the corner that held the light wrong. As if he had never started.</p>
+
+    <p>He did not say anything. He picked up the rag and began again at the top left corner.</p>
+
+    <p>On the second pass the stripes lined up with the first. His reflection followed each motion. The room behind him in the glass looked a little wrong in a way that was difficult to locate on any checklist: the angle of the north light was off by some degrees, pointing from the wrong direction, as though the window behind him faced south instead. A section of wallpaper he did not own ran along the far baseboard—a faded yellow stripe pattern from some other decade of decorating. He noted these things the way he noted discrepancies in a file. He kept working.</p>
+
+    <p>On the third pass he looked up.</p>
+
+    <p>His uncle stood in the glass.</p>
+
+    <p>Not in the room behind him. In the room the mirror held instead—the old apartment, the one Jim had visited as a boy, with the yellow cabinets and the cord pulled from a ceiling fixture and the laminate table chipped at one corner that Jim had traced with his finger every summer until he knew the shape of that chip by heart. His uncle wore a white undershirt and held a bottle by the neck the way a man holds something he has held a thousand times. He poured two fingers into a short glass. He did not look toward Jim. He looked at the pour. His attention to the pour was complete. He set the bottle down with the careful placement of a man who had learned not to be careless with things and adjusted his collar with two fingers and sat at the table.</p>
+
+    <p>He was not old. That was the thing Jim hadn't expected, though he should have—his uncle had died at fifty-three and so his uncle would always be fifty-three, and Jim had arrived at the same number, and what he was looking at was a man his own age. The recognition was physical. It moved through him like a sound wave through a building, felt in the structure before it was heard.</p>
+
+    <p>His uncle picked up a cloth from beside the sink and began cleaning the table in small circles, working outward, the same radius Jim used on counters, the same mild pressure, the same habit of chasing a streak until it gave up. He worked without hurry. The radio on his windowsill played something quiet and brassbound that Jim could not hear but could identify by the movement of his uncle's shoulders, which loosened slightly at whatever the trumpet was doing. There was a glass of something at his elbow. The kitchen light was yellow, warm, late-afternoon in some year Jim could not place.</p>
+
+    <p>He was not performing for anyone. This was the hard thing to absorb. Jim's uncle was in his own apartment, alone, on an ordinary afternoon, cleaning his table after a drink the way he always had. The ordinariness of it was what held Jim there, rag in hand, chest tight in a way he had no protocol for. He had expected, in whatever part of him had always known this day might show him something, something more declarative—a message, a warning, a gesture toward the camera. What he got instead was this: an ordinary man in a white undershirt keeping his table in order at the end of some unremarkable day. Doing the thing he always did. Still doing it.</p>
+
+    <p>Jim's throat closed. He breathed through his nose. He was fifty-three years old and standing in a spare room in his apartment watching a dead man clean and finding in it, unexpectedly, not grief but something more like recognition—the way you recognized yourself in a photograph you had not known was being taken, in a posture that was simply your posture, carrying the evidence of who you were before you had learned to be careful about it.</p>
+
+    <p>He raised the rag and finished the mirror anyway. Top left, inward, methodical. He did not rush it. He did not look away. His uncle cleaned the table and Jim cleaned the glass and the radio in Jim's apartment stayed dead and the city somewhere outside the window made its noise. When Jim was done, the room in the glass was his spare room again—the north light, the chair, himself, nothing else. His reflection blinked when he blinked. Exactly on time, now. He stood with the rag in his hand for a moment and let the moment be what it was.</p>
+
+    <p>He lowered the velvet shroud. The fabric swallowed the glass and the room and the ordinary pewter light and whatever had been in it. He folded the cloth over his arm again and carried it out with the cleaner and brought both back to the cabinet under the sink.</p>
+
+    <div class="break">* * *</div>
+
+    <p>He stood in the kitchen for a moment, looking at the counter. Then he opened the cabinet above the refrigerator and took down the bottle of bourbon he kept there for guests and poured two fingers into a short glass. He held the glass. He did not drink it immediately. He stood looking at it the way his uncle had looked at the pour—attending to it, giving it its due. Then he drank it slowly, two swallows, and rinsed the glass and set it in the rack.</p>
+
+    <p>He finished the dishes. He went back over the counter with the cloth. The water in the glass sat flat. No ripple. He did not stare at it to be sure—he noted it the way you noted a balance that had come out right, checked it once, moved on.</p>
+
+    <p>Later he sat at the kitchen table with the newspaper and a fresh glass of water. He read the same paragraph four times and then read it a fifth time and understood it. His hand rested on the table beside the glass, flat, open, as if waiting for something it wasn't going to say it wanted. He turned to the next page. Outside, the city went on doing whatever it did. He did not check. He moved his hand slowly across the table in a small circle, feeling for something, some roughness or unevenness in the grain. There was none. The surface was clean. He moved his hand again anyway, in the same small circle, working outward in that particular radius.</p>
+
+    <p>He was there for a while, doing that.</p>
+
+  </article>
+</div>
+</body>
+</html>
